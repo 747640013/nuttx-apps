@@ -311,13 +311,13 @@ int main(int argc, FAR char *argv[])
                      "sample size=%d, Ignoring\n",
                      (long)nbytes, sizeof(struct adc_msg_s));
             }
-          else
+          else 
             {
               printf("Sample:\n");
               for (i = 0; i < nsamples; i++)
                 {
-                  printf("%d: channel: %d value: %" PRId32 "\n",
-                         i + 1, sample[i].am_channel, sample[i].am_data);
+                  printf("Test %d: channel: %d value: %.2f v\n",
+                         i + 1, sample[i].am_channel, sample[i].am_data*(3.3/4096));
                 }
             }
         }
